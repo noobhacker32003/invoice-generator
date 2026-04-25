@@ -71,13 +71,13 @@ export function InvoicePreview() {
       {/* A4 Paper Container */}
       <div className="bg-white shadow-xl shadow-slate-200/50 rounded-lg overflow-hidden w-full max-w-[800px]">
         {/* Render Target for PDF */}
-        <div 
+        <div
           ref={invoiceRef}
           className="bg-white text-slate-800 p-10 sm:p-14 md:p-16 min-h-[1056px] w-full box-border relative font-sans"
         >
           {/* Header Banner */}
           <div className="absolute top-0 left-0 right-0 h-4 bg-indigo-600 print:hidden" />
-          
+
           <div className="flex justify-between items-start pt-4">
             <div>
               <h1 className="text-4xl font-bold text-slate-900 tracking-tight">INVOICE</h1>
@@ -86,10 +86,10 @@ export function InvoicePreview() {
             <div className="text-right flex flex-col items-end">
               {store.senderDetails.logoBase64 ? (
                 /* eslint-disable-next-line @next/next/no-img-element */
-                <img 
-                  src={store.senderDetails.logoBase64} 
-                  alt={store.senderDetails.companyName} 
-                  className="h-16 w-auto object-contain mb-2" 
+                <img
+                  src={store.senderDetails.logoBase64}
+                  alt={store.senderDetails.companyName}
+                  className="h-16 w-auto object-contain mb-2"
                 />
               ) : (
                 <h2 className="text-xl font-bold text-slate-900">{store.senderDetails.companyName}</h2>
@@ -109,9 +109,7 @@ export function InvoicePreview() {
               <h3 className="text-lg font-semibold text-slate-800">
                 {store.clientDetails.companyName || store.clientDetails.clientName || 'Client Name'}
               </h3>
-              {(store.clientDetails.companyName && store.clientDetails.clientName) && (
-                <p className="text-sm text-slate-600">{store.clientDetails.clientName}</p>
-              )}
+
               <div className="text-sm text-slate-500 mt-1 flex flex-col gap-0.5">
                 {store.clientDetails.address && <p>{store.clientDetails.address}</p>}
                 {store.clientDetails.clientEmail && <p>{store.clientDetails.clientEmail}</p>}
@@ -209,7 +207,7 @@ export function InvoicePreview() {
                 {store.paymentDetails.swift && <><span className="font-medium text-slate-700">SWIFT:</span><span>{store.paymentDetails.swift}</span></>}
               </div>
             </div>
-            
+
             <div className="space-y-6">
               {store.notes && (
                 <div>
